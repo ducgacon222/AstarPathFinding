@@ -44,8 +44,9 @@ public class GridView
                 go.transform.localScale = Vector3.one * this.cellSize;
 
                 Cell cellComp = go.GetComponent<Cell>();
-                cellComp.SetSprite(this.GetSprite(this.model.GetCell(x, y)));
-                this.cellViews[x, y] = cellComp;
+                cellComp.Init(x, y);
+                cellComp.SetSprite(GetSprite(model.GetCell(x, y)));
+                cellViews[x, y] = cellComp;
             }
         }
     }
